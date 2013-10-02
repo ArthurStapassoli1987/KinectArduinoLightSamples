@@ -4,7 +4,7 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Label Margin="3,8,443,272" FontSize="20" Content="Niveis:"/>
-        <TextBox Name="txt_level" FontSize="20" Margin="74,10,410,281">3</TextBox>
+        <TextBox Name="txt_level" FontSize="20" Margin="74,10,410,272">3</TextBox>
         
         <Button FontSize="30" Name="start" Margin="91,248,255,10" Click="start_Click">START</Button>
     
