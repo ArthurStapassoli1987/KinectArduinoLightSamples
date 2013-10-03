@@ -44,36 +44,52 @@ namespace ColorGame
          */
         public static void geraFrequencia(int level)
         {
-            int[] sequency = new int[50]; 
+            int n = level;
+            int[] sequency = new int[n];
             Random rdn = new Random();
-            for (int i = 0; i <= level; i++)
+            for (int i = 0; i < n; i++)
             {
-                for (int j = 0; j <= i; j++)
-                {
-                    //1-green 2-yellow 3-red
-                    int light = rdn.Next(3) + 1;
-                    sequency[i] = light;
-                    //System.Console.WriteLine(rdn.Next(3) + 1);
-                    /*if(light == 1){
-                        
-                        onGreen();
-                        Thread.Sleep(1000);
-                        offGreen();
-                        
-                    } else if(light == 2){
-                        onYellow();
-                        Thread.Sleep(1000);
-                        offYellow();
-                        
-                    } else if(light == 3){
-                        onRed();
-                        Thread.Sleep(1000);
-                        offRed();
-                    }*/
-                }
-                Thread.Sleep(10000);
-                //System.Console.WriteLine("========");    
+                //1-green 2-yellow 3-red
+                sequency[i] = rdn.Next(3) + 1;
+                Console.Write(sequency[i] + " ");
             }
+
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    Thread.Sleep(1000);
+                    //1-green 2-yellow 3-red
+                    int light = sequency[j];
+                    //System.Console.WriteLine(rdn.Next(3) + 1);
+                    if (light == 1)
+                    {
+                        onGreen();
+                        Thread.Sleep(500);
+                        offGreen();
+
+                    }
+                    else if (light == 2)
+                    {
+                        onYellow();
+                        Thread.Sleep(500);
+                        offYellow();
+
+                    }
+                    else if (light == 3)
+                    {
+                        onRed();
+                        Thread.Sleep(500);
+                        offRed();
+                    }
+                    //Console.Write(sequency[j] + " ");
+                }
+                Thread.Sleep(3000);
+                //Console.WriteLine(" ");
+                //Console.Write(" ================================ ");
+                //Thread.Sleep(1000);
+            }
+            
         }
 
         private void start_Click(object sender, RoutedEventArgs e)
